@@ -40,3 +40,4 @@ The command being executed is a ```curl``` command, which makes an ```HTTP POST`
 kubectl exec -it $(kubectl get po -l app=attacker-app -ojsonpath='{.items[0].metadata.name}') -- sh -c "curl http://backend.storefront.svc.cluster.local:80 -H 'User-Agent: Mozilla/4.0' -XPOST --data-raw 'smk=1234'"
 ```
 
+Although not mentioned explicitly in the previous command, the ```attacker``` pod contained a 
